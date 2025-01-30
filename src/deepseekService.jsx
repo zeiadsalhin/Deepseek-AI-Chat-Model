@@ -1,11 +1,10 @@
-// src/deepseekService.js
-
 import OpenAI from "openai";
 
 // Initialize DeepSeek API connection
 const openai = new OpenAI({
   baseURL: 'https://api.deepseek.com',
-  apiKey: '<DeepSeek API Key>' // Replace with your actual DeepSeek API key
+  apiKey: '<DeepSeek API Key>', // Replace with DeepSeek API key
+  dangerouslyAllowBrowser: true
 });
 
 // Function to send a message and get a response

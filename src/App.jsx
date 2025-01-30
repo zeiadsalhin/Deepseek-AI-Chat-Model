@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-// import { getDeepSeekResponse } from './deepseekService';
+import { getDeepSeekResponse } from './deepseekService';
 import './App.css'
 
 const App = () => {
@@ -23,6 +23,13 @@ const App = () => {
     }
   };
 
+  //send message by enter
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && newMessage.trim() !== '') {
+      sendMessage();
+    }
+  };
+
   // scroll control
   const messagesEndRef = useRef(null);
   useEffect(() => {
@@ -31,25 +38,39 @@ const App = () => {
   }, [messages]);
 
   return (
-    <div className="flex flex-col w-full min-h-screen abg-gray-100 min-w-sm max-w-2xl">
+    <div className="flex flex-col w-full min-h-screen min-w-sm max-w-2xl">
+
       <div className="bg-red-800 w-full font-light rounded-b-sm text-sm sticky top-0">
         <p>Bot not available right now due to DeepSeek platform error</p>
       </div>
+
       <h1 className='text-lg font-bold sticky top-5 -mb-16'>DeepSeek Chat by Alfa</h1>
-  <div className="rounded-lg shadow-md w-full md:min-w-2xl p-2 flex flex-col py-20 h-screen">
+      
+  <div className="rounded-lg w-full md:min-w-2xl p-2 flex flex-col py-20 h-screen">
+
     {/* Messages container: make it scrollable and flexible */}
-    <div className="flex-1 overflow-y-auto space-y-4 pl-2 md:pr-4">
-      {messages.map((msg, index) => (
+    <div className={`flex-1 overflow-y-auto space-y-6 pl-2 md:pr-4 
+      ${messages.length === 0 ? ' items-center flex justify-center' : '' }`}>
+
+      {messages.length === 0 ? (
+            // Display welcome message when no messages
+            <div className="p-4 text-xl text-center text-gray-400 my-auto">
+              <strong>Welcome!</strong>
+              <p>Start chatting Now</p>
+            </div>
+          ) : (
+      messages.map((msg, index) => (
         <div
           key={index}
-          className={`p-4 rounded-lg break-words ${
-            msg.role === 'user' ? 'bg-blue-800 text-white text-right' : 'bg-gray-200 text-left'
+          className={`p-4 break-words ${
+            msg.role === 'user' ? 'bg-blue-800 text-white text-right rounded-l-lg' : 'bg-gray-700 text-left rounded-r-lg -translate-x-3'
           }`}
         >
-          <strong className="font-bold">{msg.role === 'user' ? 'You' : 'Bot'}:</strong>
+          <strong className="font-bold">{msg.role === 'user' ? 'You' : 'AI'}</strong>
           <p>{msg.content}</p>
         </div>
-      ))}
+      )))}
+
       {/* Scroll to bottom marker */}
       <div ref={messagesEndRef} />
     </div>
@@ -60,8 +81,9 @@ const App = () => {
         type="text"
         value={newMessage}
         onChange={(e) => setNewMessage(e.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="Type a message"
-        className="w-full p-3 rounded-lg border-1 border-gray-300 focus:border-1 focus:outline-none focus:ring-3 focus:ring-blue-700"
+        className="w-full p-3 rounded-lg outline-2 outline-gray-300 focus:outline-1 focus:outline-none focus:ring-3 focus:ring-blue-500"
       />
       <button
       disabled={!newMessage}
