@@ -40,12 +40,12 @@ const App = () => {
   return (
     <div className="flex flex-col w-full min-h-screen min-w-sm max-w-2xl items-center">
 
-      <div className="top w-full bg-[#242424] -mb-16 z-50">
-      <div className="bg-red-800 w-full font-light rounded-b-sm text-sm sticky top-0">
+      <div className="top  absolute top-0 w-full bg-[#242424] -mb-16 z-50">
+      <div className="bg-red-800 w-full font-light rounded-b-sm text-sm">
         <p>Bot not available right now due to DeepSeek platform error</p>
       </div>
 
-      <h1 className='text-lg font-bold sticky top-5'>DeepSeek Chat by Alfa</h1>
+      <h1 className='text-lg font-bold mt-4'>DeepSeek AI Chat</h1>
       </div>
       
   <div className={`rounded-lg w-full md:min-w-2xl p-2 flex flex-col py-20a ${messages.length === 0 ? 'py-20 h-screen' : 'mt-20 max-h-[80vh]'}`}>
