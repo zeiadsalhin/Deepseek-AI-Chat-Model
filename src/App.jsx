@@ -48,7 +48,7 @@ const App = () => {
       <h1 className='text-lg font-bold mt-4'>DeepSeek AI Chat</h1>
       </div>
       
-  <div className={`rounded-lg w-full md:min-w-2xl p-2 flex flex-col py-20a ${messages.length === 0 ? 'py-20 h-screen' : 'mt-20 max-h-[80vh]'}`}>
+  <div className={`rounded-lg w-full md:min-w-2xl p-2 flex flex-col mt-20 mb-10 ${messages.length === 0 ? 'apy-20 ah-screen' : 'mt-20 max-h-[80vh]'}`}>
 
     {/* Messages container: make it scrollable and flexible */}
     <div className={`flex-1 overflow-y-auto space-y-6 pl-2 md:pr-4 
