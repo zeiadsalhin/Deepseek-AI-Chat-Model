@@ -46,7 +46,7 @@ const App = () => {
 
       <h1 className='text-lg font-bold sticky top-5 -mb-16'>DeepSeek Chat by Alfa</h1>
       
-  <div className="rounded-lg w-full md:min-w-2xl p-2 flex flex-col py-20 h-screen">
+  <div className="rounded-lg w-full md:min-w-2xl p-2 flex flex-col py-20 h-[95vh]">
 
     {/* Messages container: make it scrollable and flexible */}
     <div className={`flex-1 overflow-y-auto space-y-6 pl-2 md:pr-4 
