@@ -40,7 +40,7 @@ const App = () => {
   return (
     <div className="flex flex-col w-full min-h-screen min-w-sm max-w-2xl items-center">
 
-      <div className="top  absolute top-0 w-full bg-[#242424] a-mb-16 z-50">
+      <div className="top absolutea atop-0 w-full bg-[#242424] z-50 mb-2">
       <div className="bg-red-800 w-full font-light rounded-b-sm text-sm">
         <p>Bot not available right now due to DeepSeek platform error</p>
       </div>
@@ -48,7 +48,7 @@ const App = () => {
       <h1 className='text-lg font-bold mt-4'>DeepSeek AI Chat</h1>
       </div>
       
-  <div className={`rounded-lg w-full md:min-w-2xl p-2 flex flex-col mb-10 ${messages.length === 0 ? 'apy-20 ah-screen' : 'mt-20 max-h-[80vh]'}`}>
+  <div className='rounded-lg w-full md:min-w-2xl p-2 flex flex-col min-h-[calc(100vh-12rem)] max-h-[calc(100vh-12rem)]'>
 
     {/* Messages container: make it scrollable and flexible */}
     <div className={`flex-1 overflow-y-auto space-y-6 pl-2 md:pr-4 
@@ -78,7 +78,7 @@ const App = () => {
     </div>
   </div>
    {/* Input box and button fixed at the bottom */}
-   <div className="absolute bottom-12 z-50 flex items-center space-x-2 p-2 md:min-w-2xl min-w-sm max-w-2xl">
+   <div className="absolutea abottom-12 z-50 flex items-center space-x-2 p-2 md:min-w-2xl min-w-sm max-w-2xl">
       <input
         type="text"
         value={newMessage}
@@ -96,7 +96,7 @@ const App = () => {
       </button>
 
     </div>
-    <div className="info absolute bottom-5 text-center mx-auto w-fit text-gray-500">
+    <div className="info aabsolute abottom-5 text-center mx-auto w-fit text-gray-500">
       <p>Developed by Alfa v0.1</p>
     </div>
 </div>
