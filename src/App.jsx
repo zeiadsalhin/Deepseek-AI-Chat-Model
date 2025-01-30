@@ -40,7 +40,7 @@ const App = () => {
   return (
     <div className="flex flex-col w-full min-w-sm max-w-2xl items-center">
 
-      <div className="top absolutea atop-0 w-full bg-[#242424] z-50 mb-2">
+      <div className="top w-full bg-[#242424] z-50 mb-2">
       <div className="bg-red-800 w-full font-light rounded-b-sm text-sm">
         <p>Bot not available right now due to DeepSeek platform error</p>
       </div>
@@ -78,14 +78,14 @@ const App = () => {
     </div>
   </div>
    {/* Input box and button fixed at the bottom */}
-   <div className="absolutea abottom-12 z-50 flex items-center space-x-2 p-2 md:min-w-2xl min-w-sm max-w-2xl">
+   <div className="z-50 flex items-center space-x-2 p-2 md:min-w-2xl min-w-sm max-w-2xl">
       <input
         type="text"
         value={newMessage}
         onChange={(e) => setNewMessage(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type a message"
-        className="w-full p-3 rounded-lg outline-2 outline-gray-300 focus:outline-1 focus:outline-none focus:ring-3 focus:ring-blue-500"
+        className="w-full p-3 rounded-lg outline-2 text-gray-100 outline-gray-300 focus:outline-1 focus:outline-none focus:ring-3 focus:ring-blue-500"
       />
       <button
       disabled={!newMessage}
@@ -96,7 +96,7 @@ const App = () => {
       </button>
 
     </div>
-    <div className="info aabsolute abottom-5 mt-2 text-center mx-auto w-fit text-gray-500">
+    <div className="info mt-2 text-center mx-auto w-fit text-gray-500">
       <p>Developed by Alfa v0.1</p>
     </div>
 </div>
