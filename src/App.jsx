@@ -37,13 +37,19 @@ const App = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Function to start a new chat
+  const startNewChat = () => {
+    setMessages([]);
+    setNewMessage('');
+  };
+
   return (
     <div className="flex flex-col w-full min-w-sm max-w-2xl items-center">
 
       <div className="top w-full bg-[#242424] z-50 mb-2">
-      <div className="bg-red-800 w-full font-light rounded-b-sm text-sm">
+      {/* <div className="bg-red-800 w-full font-light rounded-b-sm text-sm">
         <p>Bot not available right now due to DeepSeek platform error</p>
-      </div>
+      </div> */}
 
       <h1 className='text-lg font-bold mt-4'>DeepSeek AI Chat</h1>
       </div>
@@ -77,7 +83,15 @@ const App = () => {
       <div ref={messagesEndRef} />
     </div>
   </div>
-   {/* Input box and button fixed at the bottom */}
+
+    {/* New chat button */}
+      <button
+        onClick={startNewChat}
+        className={`p-2 font-medium text-sm bg-red-800 text-white rounded-lg hover:bg-red-900 focus:outline-none hover:cursor-pointer ${messages.length === 0 ? 'hidden' : ''}`}>
+        New Chat +
+      </button>
+
+     {/* Input box and button fixed at the bottom */}
    <div className="z-50 flex items-center space-x-2 p-2 md:min-w-2xl min-w-sm max-w-2xl">
       <input
         type="text"
@@ -97,7 +111,7 @@ const App = () => {
 
     </div>
     <div className="info mt-2 text-center mx-auto w-fit text-gray-500">
-      <p>Developed by Alfa v0.1</p>
+      <p>Developed by <a href="https://github.com/zeiadsalhin" target='_blank'>Alfa</a> v0.1</p>
     </div>
 </div>
 

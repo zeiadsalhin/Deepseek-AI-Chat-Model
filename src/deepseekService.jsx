@@ -1,25 +1,16 @@
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Initialize DeepSeek API connection
-const openai = new OpenAI({
-  baseURL: 'https://api.deepseek.com',
-  apiKey: 'sk-726a2ce0ae474e34867c1cbc15712037', // Replace with DeepSeek API key
-  dangerouslyAllowBrowser: true
-});
+// Initialize Gemini API connection
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_DeepSeek_API_KEY);
 
 // Function to send a message and get a response
 export async function getDeepSeekResponse(userMessage) {
   try {
-    const completion = await openai.chat.completions.create({
-      messages: [
-        { role: "system", content: "You are a helpful assistant." },
-        { role: "user", content: userMessage },
-      ],
-      model: "deepseek-chat", // Using DeepSeek's chat model
-    });
-    return completion.choices[0].message.content;
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const result = await model.generateContent(userMessage);
+    return result.response.text();
   } catch (error) {
-    console.error("Error with DeepSeek API:", error);
+    console.error("Error with Gemini API:", error);
     return "Sorry, something went wrong. Please try again.";
   }
 }
