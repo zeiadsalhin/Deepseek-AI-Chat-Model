@@ -46,7 +46,7 @@ Deepseek Alfa is designed to be easy to use and integrate. Here are some key poi
 We welcome contributions to Deepseek Alfa! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request on GitHub. Let's make Deepseek Alfa even better together!
 
 ## License
-theFront is licensed under the MIT License. See the LICENSE file for more information.
+Deepseek Alfa is licensed under the MIT License. See the LICENSE file for more information.
 
 ## Acknowledgements
 Deepseek Alfa is developed and maintained by Alfa. Special thanks to the open-source community for their invaluable contributions and support.
