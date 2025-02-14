@@ -22,8 +22,8 @@ To get started with theFront, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-github-profile/deepseek-alfa.git
-   cd deepseek-alfa
+   git clone https://github.com/zeiadsalhin/Deepseek-AI-Chat-Model.git
+   cd Deepseek-AI-Chat-Model
 
 2. **Install dependencies:**
    ```bash
